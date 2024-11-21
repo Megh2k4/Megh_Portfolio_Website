@@ -7,8 +7,7 @@ import Experience from "@/components/main/Experience";
 import Contact from "@/components/main/Contact";
 
 
-
-export const  experiences = [
+const  experiences = [
   {
     title: "Research Assistant",
     company_name: "IBM Canada",

@@ -8,6 +8,7 @@ import {
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { useSectionInView } from "@/lib/hooks";
+import Image from "next/image";
 
 interface ExperienceProps {
   experiences: {
@@ -31,7 +32,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceProps["experiences"][0] }
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
-          <img
+          <Image
             src={experience.icon}
             alt={experience.company_name}
             className="w-[85%] h-[82%] object-contain"
