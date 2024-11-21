@@ -25,59 +25,63 @@ interface ExperienceProps {
 const ExperienceCard: React.FC<{ experience: ExperienceProps["experiences"][0] }> = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      visible={true}
-      contentStyle={{ background: "#1d1836", color: "#fff" }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          {/* Fixed: Added width and height */}
-          <Image
-            src={experience.icon}
-            alt={experience.company_name}
-            className="object-contain"
-            width={80} // Replace with actual dimensions
-            height={80} // Replace with actual dimensions
-          />
-        </div>
-      }
+  visible={true}
+  contentStyle={{ background: "#1d1836", color: "#fff" }}
+  contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+  date={experience.date}
+  iconStyle={{
+    background: experience.iconBg,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  icon={
+    <div className="flex justify-center items-center w-full h-full max-w-[150px] max-h-[150px]">
+      <Image
+        src={experience.icon}
+        alt={experience.company_name}
+        className="object-contain"
+        width={80} // Set a fixed width
+        height={80} // Set a fixed height
+      />
+    </div>
+  }
+>
+  <div>
+    <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+    <p
+      className="text-secondary text-[16px] font-semibold"
+      style={{ margin: 0 }}
     >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
+      {experience.company_name}
+    </p>
+  </div>
+
+  <ul className="mt-5 list-disc ml-5 space-y-2">
+    {experience.points.map((point, index) => (
+      <li
+        key={`experience-point-${index}`}
+        className="text-white-100 text-[14px] pl-1 tracking-wider"
+      >
+        {point}
+      </li>
+    ))}
+  </ul>
+
+  <div className="mt-5">
+    <h4 className="text-gray-400 text-[16px] font-bold">Skills:</h4>
+    <ul className="list-disc ml-5 space-y-2">
+      {experience.skills.map((skill, index) => (
+        <li
+          key={`skill-${index}`}
+          className="text-white-100 text-[14px] pl-1 tracking-wider"
         >
-          {experience.company_name}
-        </p>
-      </div>
-
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-5">
-        <h4 className="text-gray-400 text-[16px] font-bold">Skills:</h4>
-        <ul className="list-disc ml-5 space-y-2">
-          {experience.skills.map((skill, index) => (
-            <li
-              key={`skill-${index}`}
-              className="text-white-100 text-[14px] pl-1 tracking-wider"
-            >
-              {skill}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </VerticalTimelineElement>
+          {skill}
+        </li>
+      ))}
+    </ul>
+  </div>
+</VerticalTimelineElement>
   );
 };
 

@@ -25,7 +25,7 @@ const  experiences = [
   {
     title: "Software Developer",
     company_name: "McMaster AI Society",
-    icon: "/AIlogo.png", // Assuming you have an icon for 4Pillar Global Technology
+    icon: "/AIlogo2.png", // Assuming you have an icon for 4Pillar Global Technology
     iconBg: "#E6EFFF", // Placeholder color, change as needed
     date: "Sep 2023 - April 2024",
     points: [
