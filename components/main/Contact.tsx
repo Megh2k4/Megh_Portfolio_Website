@@ -68,9 +68,9 @@ const Contact = () => {
     <ToastContainer />
     <div
   style={{ backgroundImage: "url(atombg-comp.webp)" }}
-  className="h-[60%] w-[80%] relative bg-cover bg-center rounded-xl border border-white flex items-center justify-start"
+  className="min-h-[60%] w-[80%] relative bg-cover bg-center rounded-xl border border-white flex flex-wrap items-start justify-start overflow-auto"
 >
-  <div className="p-10 bg-opacity-80 bg-black rounded-lg w-[40%] ml-10 max-w-full max-h-full overflow-hidden">
+  <div className="p-10 bg-opacity-80 bg-black rounded-lg w-[40%] ml-10 max-w-full overflow-visible">
     
         <p className="text-secondary mb-2 text-lg">Get in touch</p>
         <h3 className="text-2xl font-bold mb-5 text-white">Contact Me</h3>
