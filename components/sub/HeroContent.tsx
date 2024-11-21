@@ -9,8 +9,7 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { Typewriter } from "react-simple-typewriter";
-
-import EarthCanvas from "../main/EarthCanvas";
+import Image from "next/image";
 
 const Bio = {
   name: "Megh Joshi",
@@ -24,12 +23,13 @@ const Bio = {
   ],
 };
 
+
 const HeroContent = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full h-full z-[50] relative"
+      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -72,6 +72,7 @@ const HeroContent = () => {
           Outside the world of code, I&apos;m an adventurer at heart, often found hiking through nature&apos;s untamed beauty or diving into the vivid worlds of anime.
           Driven by curiosity and powered by innovation, I strive to leave a lasting impact wherever I go—whether it&apos;s building impactful projects, solving real-world problems, or empowering teams. I believe that with the right mindset and tools, there&apos;s no limit to what we can achieve.
         </motion.p>
+
         <div className="flex flex-row gap-4">
           <motion.a
             variants={slideInFromLeft(1)}
@@ -107,21 +108,19 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="flex justify-center items-center flex-1 overflow-visible relative"
-        style={{ width: "50%", height: "50%" }}
+        className="w-full h-full flex justify-center items-center"
       >
-        <div
-          style={{
-            width: "1500px",
-            height: "1500px",
-            transform: "translate(250px, 100px)",
-          }}
-        >
-          <EarthCanvas />
-        </div>
+        <Image
+          src="/mainIconsdark.svg"
+          alt="work icons"
+          height={650}
+          width={650}
+        />
       </motion.div>
     </motion.div>
   );
 };
 
 export default HeroContent;
+
+

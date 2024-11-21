@@ -32,10 +32,13 @@ const ExperienceCard: React.FC<{ experience: ExperienceProps["experiences"][0] }
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
+          {/* Fixed: Added width and height */}
           <Image
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[85%] h-[82%] object-contain"
+            className="object-contain"
+            width={80} // Replace with actual dimensions
+            height={80} // Replace with actual dimensions
           />
         </div>
       }
@@ -77,6 +80,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceProps["experiences"][0] }
     </VerticalTimelineElement>
   );
 };
+
 
 const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
   const { ref, inView } = useSectionInView(0.5);

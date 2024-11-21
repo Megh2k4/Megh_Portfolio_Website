@@ -39,7 +39,7 @@ const  experiences = [
   {
     title: "Housing Assistant",
     company_name: "McMaster Housing and Conference Services",
-    icon: "McMaster_University_logo.svg.png", // Assuming you have an icon for Zenit Excelencia
+    icon: "/McMaster_University_logo.svg.png", // Assuming you have an icon for Zenit Excelencia
     iconBg: "#DDEEFF", // Placeholder color, change as needed
     date: "Sep 2023 - Apr 2024",
     points: [
